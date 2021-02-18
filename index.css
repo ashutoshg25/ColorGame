@@ -4,24 +4,78 @@
 }
 
 #header {
-  background-color: lightpink;
-  height: 30vh;
+  background-color: rgb(206, 146, 153);
+  height: 29vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  line-height: 2;
+  background-image: var(--gradient);
+  background-size: 200%;
+  animation: bg-animation 2.25s infinite alternate;
+  padding-left: 150px;
+  
+  
+  font-family: 'Krona One', sans-serif;
+  
+}
+
+@keyframes bg-animation{
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
 }
 
 #container {
-  background-color: black;
+  background-color: rgb(250, 253, 200);
   height: 70vh;
-  display: flex;
+  display: grid;
   justify-content: space-evenly;
+  grid-template-columns: auto auto auto;
   align-items: center;
 }
 
 .tile {
-  height: 200px;
-  width: 200px;
-  background-color: aliceblue;
+  height: 0;
+  width: 150px;
+  border-left: 60px solid rgb(250, 253, 200);
+  border-right: 60px solid rgb(250, 253, 200);
+  border-bottom: 150px solid transparent;
+}
+
+.footer {
+  position: fixed;
+  background-color: #eed440;
+  color: #000000;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+  bottom: 0;
+  width: 100%;
+  font-size: 15x;
+  padding: 7px;
+}
+:root {
+  --gradient: linear-gradient(
+    45deg, 
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+}
+
+.newgame
+{
+  position: relative;
+  cursor: pointer;
+  padding: .75em 1.25em;
+  background: linear-gradient(180deg, #e97223, rgb(223, 230, 231), #2f9e38);
+  background-size: 100%;
+  color: rgb(25, 127, 216);
+  font-family: 'Saira Stencil One', cursive;
+  font-size: 23px;
+  border-radius: 12px;
 }
